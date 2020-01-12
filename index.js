@@ -9,8 +9,8 @@
  * It allows you to run a node server and test your app
  */
 
-const webSocket = require('ws').Server;
-const wss = new webSocket({
+const webSocket = require('ws');
+const wss = new webSocket.Server({
     port: 8080
 });
 
