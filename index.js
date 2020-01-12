@@ -1,6 +1,7 @@
 /**
  * Author: Thibault Lenclos
  * Github: https://github.com/tlenclos
+ *
  * Edited by: Etienne CRESPI
  * Github: https://github.com/Lorddistrict
  *
@@ -8,20 +9,9 @@
  * It allows you to run a node server and test your app
  */
 
-const fs = require('fs');
-
-const privateKey = fs.readFileSync('ssl-cert/private.pem', 'utf8');
-const certificate = fs.readFileSync('ssl-cert/certificate.pem', 'utf8');
-
-const credentials = { key: privateKey, cert: certificate };
-const https = require('https');
-
-const httpsServer = https.createServer(credentials);
-httpsServer.listen(8080);
-
 const webSocket = require('ws').Server;
 const wss = new webSocket({
-    server: httpsServer
+    port: 8080
 });
 
 console.log('Starting websocket server');
