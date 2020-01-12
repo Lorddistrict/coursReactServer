@@ -19,8 +19,8 @@ const https = require('https');
 const httpsServer = https.createServer(credentials);
 httpsServer.listen(8080);
 
-const WebSocket = require('ws').Server;
-const wss = new WebSocketServer({
+const webSocket = require('ws').Server;
+const wss = new webSocket({
     server: httpsServer
 });
 
@@ -44,7 +44,7 @@ wss.on('connection', function connection(ws) {
 
         // Broadcast to all clients
         wss.clients.forEach(function each(client) {
-            if (client !== ws && client.readyState === WebSocket.OPEN) {
+            if (client !== ws && client.readyState === webSocket.OPEN) {
                 client.send(data);
             }
         });
