@@ -10,7 +10,7 @@
   "author": "Lorddistrict",
   "license": "ISC",
   "dependencies": {
-    "ws": "^7.2.1"
+    "ws": "^7.4.6"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.1",
